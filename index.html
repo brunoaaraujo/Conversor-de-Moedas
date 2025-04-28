@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+    <title>Conversor de Moedas</title>
+</head>
+
+<body>
+    <header>
+        <img class="image-hands" src="./img/logo-hands.gif" alt="Logo-Change">
+    </header>
+    <section class="box-main">
+        <form>
+            <div>
+                <label class="text-one" for="first-coin">Converter <b>de</b></label><br>
+                <select name="moedas" id="first-coin">
+                    <option class="option" value="./img/brasil.svg">R$ Real brasileiro</option>
+                    <option class="option" value="./img/estados-unidos.svg">US$ Dólar americano</option>
+                    <option class="option" value="./img/euro.svg">€ Euro</option>
+                    <option class="option" value="./img/libra.svg">£ Libra</option>
+                    <option class="option" value="./img/bitcoin.svg">Bitcoin</option>
+                </select>
+            </div>
+            <div>
+                <label class="text-two" for="second-coin">Converter <b>para</b></label><br>
+                <select name="moedas2" id="second-coin">
+                    <option class="option" value="./img/brasil.svg">R$ Real brasileiro</option>
+                    <option class="option" value="./img/estados-unidos.svg">US$ Dólar americano</option>
+                    <option class="option" value="./img/euro.svg">€ Euro</option>
+                    <option class="option" value="./img/libra.svg">£ Libra</option>
+                    <option class="option" value="./img/bitcoin.svg">Bitcoin</option>
+                </select>
+            </div>
+            <div>
+                <label class="text-tree" for="value-input">Valor</label><br>
+                <input class="entered-value" type="number" id="value-input" placeholder="Digite o valor">
+            </div>
+            <input class="converter" type="submit" value="Converter">
+        </form>
+        <div class="box-imagem">
+            <div class="currency-convert">
+                <img id="main-currency-image" src="./img/brasil.svg" alt="logo-brasil">
+                <p class="paragraph-one">Real</p>
+                <p class="paragraph-two">R$ 10.000,00</p>
+            </div>
+            <div class="box-arrow">
+                <img class="logo-arrow" src="./img/arrow.svg" alt="logo-arrow">
+            </div>
+            <div class="converted-currency">
+                <img id="second-currency-image" src="./img/estados-unidos.svg" alt="logo-eua">
+                <p class="paragraph-one">Dólar Americano</p>
+                <p class="paragraph-two">US$ 2.000,00</p>
+            </div>
+        </div>
+    </section>
+    <script src="./script.js"></script>
+</body>
+
+</html>
