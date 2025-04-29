@@ -12,8 +12,6 @@ document.querySelector('#first-coin').addEventListener('change' , function(){
     paragraphToUpdate3.textContent = textoSelect3;
 })
 
-
-
 document.querySelector('#second-coin').addEventListener('change', function(){
     const imageSelect2 = this.value;
     const imageToDisplay2 = document.querySelector('#second-currency-image');
@@ -28,11 +26,44 @@ document.querySelector('#second-coin').addEventListener('change', function(){
     paragraphToUpdate4.textContent = textoSelect4;
 })
 
+
 document.querySelector('#value-input').addEventListener('input', function(){
     const inputValue = this.value;
     const textoSelect5 = document.querySelector('#coin-value');
 
     textoSelect5.textContent = inputValue;
 })
+
+document.querySelector('#button-converter').addEventListener('click', function() {
+    const conversionRate = parseFloat(document.querySelector('#second-coin option:checked').dataset.conversionRate);
+    const inputDisplay = document.querySelector('#coin-value');
+    const convertedDisplay = document.querySelector('#coin-value2');
+
+    if (!isNaN(inputValue)) {
+        inputDisplay.textContent = `${inputValue}`;
+        const convertedValue = inputValue * conversionRate;
+        convertedDisplay.textContent = `${convertedValue.toFixed(2)}`;
+    } else {
+        inputDisplay.textContent = 'Por favor, digite um valor válido.';
+        convertedDisplay.textContent = '';
+    }
+});
+
+document.querySelector('#button-converter').addEventListener('click', function() {
+    const inputValue = parseFloat(document.querySelector('#value-input').value);
+    const conversionRate = parseFloat(document.querySelector('#second-coin option:checked').dataset.conversionRate);
+    
+    const inputDisplay = document.querySelector('#coin-value');
+    const convertedDisplay = document.querySelector('#coin-value2');
+
+    if (!isNaN(inputValue)) {
+        const convertedValue = inputValue * conversionRate;
+        inputDisplay.textContent = `${inputValue}`;
+        convertedDisplay.textContent = `${convertedValue.toFixed(2)}`;
+    } else {
+        inputDisplay.textContent = 'Por favor, digite um valor válido.';
+        convertedDisplay.textContent = '';
+    }
+});
 
 
