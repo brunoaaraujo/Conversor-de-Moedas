@@ -137,12 +137,31 @@ body {
 }
 
  .paragraph-two {
+    display: inline-block;
     color: #555;
     font-size: 20px;
     font-weight: 700;
     line-height: 18px;
     margin-top: 4px;
  }
+
+#coin-value {
+    display: inline-block;
+    color: #555;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 18px;
+    margin-top: 4px;
+}
+
+#coin-value2 {
+    display: inline-block;
+    color: #555;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 18px;
+    margin-top: 4px;
+}
 
  .logo-arrow {
     width: 25px;
