@@ -18,3 +18,4 @@ Os valores de conversão são fixos e definidos manualmente no código (não uti
 📌 Objetivo
 O objetivo deste projeto é praticar a construção de uma aplicação web completa com HTML, CSS e JavaScript (vanilla), reforçando conhecimentos sobre estruturação de páginas, estilo visual e lógica de programação com manipulação do DOM e eventos.
 
+![Principal](https://github.com/user-attachments/assets/347e6eea-c11e-4ada-bd9a-1f74e5b6c1ff)
