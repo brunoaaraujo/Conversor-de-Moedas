@@ -168,12 +168,18 @@ body {
     width: 25px;
     height: 39px;
     margin: 5px 43px;
- }
+}
+
+#main-currency-image {
+    width: 52px;
+    height: 52px;
+    border: solid 1px #a1a1a1;
+    border-radius: 50%;
+}
 
 #second-currency-image {
     width: 52px;
     height: 52px;
     border: solid 1px #a1a1a1;
     border-radius: 50%;
-    box-shadow: 0 3px 5px 0px rgba(0, 0, 0, 0.15);
 }
