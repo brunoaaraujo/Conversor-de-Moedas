@@ -1,46 +1,69 @@
-// Função para atualizar a imagem e o texto da moeda selecionada
-function updateCoinDisplay(selectElement, imageElement, textElement, symbolElement) {
-    const imageSelect = selectElement.value; // Valor da moeda selecionada
-    const textoSelect = selectElement.options[selectElement.selectedIndex].dataset.texto; // Texto da moeda
-    const textoSelectValor = selectElement.options[selectElement.selectedIndex].dataset.valor; // Valor da moeda
+const convertButton = document.querySelector("#button-converter")
+const currencySelect = document.querySelector("#second-coin")
 
-    imageElement.src = imageSelect; // Atualiza a imagem
-    textElement.textContent = textoSelect; // Atualiza o texto
-    symbolElement.textContent = textoSelectValor; // Atualiza o símbolo
-}
+function convertValues() {
+    const inputCurrencyValue = document.querySelector("#value-input").value //valor de entrada para conversão
+    const currencyValueToConvert = document.querySelector("#coin-symbol1") //Valor a ser convertido
+    const currencyValueConverted = document.querySelector("#coin-symbol2") //Valor convertido
 
-// Função para converter o valor inserido
-function convertCurrency() {
-    const inputValue = parseFloat(document.querySelector('#value-input').value); // Valor de entrada
-    const conversionRate = parseFloat(document.querySelector('#second-coin option:checked').dataset.conversionRate); // Taxa de conversão
+    const dolarToday = 5.65
+    const euroToday = 6.36
+    const libraToday = 7.52
 
-    const inputDisplay = document.querySelector('#coin-value'); // Elemento que mostra o valor de entrada
-    const convertedDisplay = document.querySelector('#coin-value2'); // Elemento que mostra o valor convertido
-
-    if (!isNaN(inputValue)) {
-        const convertedValue = inputValue * conversionRate; // Calcula o valor convertido
-        inputDisplay.textContent = `${inputValue}`; // Atualiza o valor de entrada
-        convertedDisplay.textContent = `${convertedValue.toFixed(2)}`; // Atualiza o valor convertido
-    } else {
-        inputDisplay.textContent = 'Por favor, digite um valor válido.'; // Mensagem de erro
-        convertedDisplay.textContent = ''; // Limpa o valor convertido
+    // Se o select estiver selecionado o valor do dolar, entra aqui
+    if (currencySelect.value == "dolar") {
+        currencyValueConverted.innerHTML = new Intl.NumberFormat("en-US", {
+            style: "currency",
+            currency: "USD"
+        }).format(inputCurrencyValue / dolarToday)
     }
+
+    // Se o select estiver selecionado o valor do euro, entra aqui
+    if (currencySelect.value == "euro") {
+        currencyValueConverted.innerHTML = new Intl.NumberFormat("es-ES", {
+            style: "currency",
+            currency: "EUR"
+        }).format(inputCurrencyValue / euroToday)
+    }
+
+    // Se o select estiver selecionado o valor do libra, entra aqui
+    if (currencySelect.value == "libra") {
+        currencyValueConverted.innerHTML = new Intl.NumberFormat("en-UK", {
+            style: "currency",
+            currency: "GBP"
+        }).format(inputCurrencyValue / libraToday)
+    }
+
+    currencyValueToConvert.innerHTML = new Intl.NumberFormat("pt-BR", {
+        style: "currency",
+        currency: "BRL"
+    }).format(inputCurrencyValue)
 }
 
-// Adiciona os ouvintes de eventos
-document.querySelector('#first-coin').addEventListener('change', function() {
-    updateCoinDisplay(this, document.querySelector('#main-currency-image'), document.querySelector('#text-coin'), document.querySelector('#coin-symbol1'));
-});
+function changeCurrency() {
+    const currencyName = document.querySelector("#text-coin2")
+    const currencyImage = document.querySelector("#second-currency-image")
 
-document.querySelector('#second-coin').addEventListener('change', function() {
-    updateCoinDisplay(this, document.querySelector('#second-currency-image'), document.querySelector('#text-coin2'), document.querySelector('#coin-symbol2'));
-});
+    // Se o select estiver selecionado o valor do dolar, entra aqui
+    if (currencySelect.value == "dolar") {
+        currencyName.innerHTML = "Dólar Americano"
+        currencyImage.src = "./img/estados-unidos.svg"
+    }    
 
-document.querySelector('#value-input').addEventListener('input', function() {
-    const inputValue = this.value;
-    document.querySelector('#coin-value').textContent = inputValue; // Atualiza o valor mostrado
-});
+    // Se o select estiver selecionado o valor do euro, entra aqui
+    if (currencySelect.value == "euro") {
+        currencyName.innerHTML = "Euro"
+        currencyImage.src = "./img/euro.svg"
+    } 
 
-document.querySelector('#button-converter').addEventListener('click', convertCurrency);
+    // Se o select estiver selecionado o valor do euro, entra aqui
+    if (currencySelect.value == "libra") {
+        currencyName.innerHTML = "Libra"
+        currencyImage.src = "./img/libra.svg"
+    } 
 
+    convertValues()
+}
 
+currencySelect.addEventListener("change", changeCurrency)
+convertButton.addEventListener("click", convertValues)

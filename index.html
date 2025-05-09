@@ -17,61 +17,41 @@
         <div>
             <label class="text-one" for="first-coin">Converter <b>de</b></label><br>
             <select name="moedas" id="first-coin">
-                <option class="option" value="./img/brasil.svg" data-imagem="./img/brasil.svg" data-texto="Real"
-                    data-valor="R$">R$ Real brasileiro
-                </option>
-                <option class="option" value="./img/estados-unidos.svg" data-texto="Dólar Americano" data-valor="US$">
-                    US$ Dólar americano</option>
-                <option class="option" value="./img/euro.svg" data-texto="Euro" data-valor="€">€ Euro</option>
-                <option class="option" value="./img/libra.svg" data-texto="Libra" data-valor="£">£ Libra</option>
-                <option class="option" value="./img/japao.png" data-texto="Bitcoin" data-valor="¥">¥ Iene japonês
-                </option>
+                <option>R$ Real brasileiro</option>
             </select>
         </div>
         <div>
             <label class="text-two" for="second-coin">Converter <b>para</b></label><br>
             <select name="moedas2" id="second-coin">
-                <option class="option" value="./img/brasil.svg" data-texto="Real" data-valor="R$"
-                    data-conversion-rate="1">R$ Real brasileiro
-                </option>
-                <option class="option" value="./img/estados-unidos.svg" data-texto="Dólar Americano" data-valor="US$"
-                    data-conversion-rate=".1769">US$ Dólar americano</option>
-                <option class="option" value="./img/euro.svg" data-texto="Euro" data-valor="€"
-                    data-conversion-rate=".155">€ Euro</option>
-                <option class="option" value="./img/libra.svg" data-texto="Libra" data-valor="£"
-                    data-conversion-rate=".1317">£ Libra</option>
-                <option class="option" value="./img/japao.png" data-texto="Bitcoin" data-valor="¥"
-                    data-conversion-rate="25.31">¥ Iene japonês</option>
+                <option value="dolar">US$ Dólar americano</option>
+                <option value="euro">€ Euro</option>
+                <option value="libra">£ Libra</option>
             </select>
         </div>
-            <div>
-                <label class="text-tree" for="value-input">Valor</label><br>
-                <input class="entered-value" type="number" id="value-input" placeholder="Digite o valor">
-            </div>
-            <input id="button-converter" class="converter" type="submit" value="Converter">
-            <input type="reset" name="reset" id="input-reset">
+        <div>
+            <label class="text-tree" for="value-input">Valor</label><br>
+            <input class="entered-value" type="number" id="value-input" placeholder="R$ 10.000,00">
+        </div>
+        <input id="button-converter" class="converter" type="submit" value="Converter">
         <div class="box-imagem">
             <div class="currency-convert">
                 <img id="main-currency-image" src="./img/brasil.svg" alt="logo-brasil">
                 <p id="text-coin" class="paragraph-one">Real</p>
-                <p id="coin-symbol1" class="paragraph-two">R$</p>
-                <p id="coin-value"></p>
+                <p id="coin-symbol1" class="paragraph-two">R$ 0.00</p>
                 </p>
             </div>
             <div class="box-arrow">
                 <img class="logo-arrow" src="./img/arrow.svg" alt="logo-arrow">
             </div>
             <div class="converted-currency">
-                <img id="second-currency-image" src="./img/brasil.svg" alt="logo-eua">
-                <p id="text-coin2" class="paragraph-one">Real</p>
-                <p id="coin-symbol2" class="paragraph-two">R$
-                <p id="coin-value2"></p>
-                </p>
+                <img id="second-currency-image" src="./img/estados-unidos.svg" alt="logo-eua">
+                <p id="text-coin2" class="paragraph-one">Dólar Americano</p>
+                <p id="coin-symbol2" class="paragraph-two">US$ 0.00</p>
             </div>
         </div>
     </section>
     <img src="./img/logo-hands.gif" alt="logo-hands" class="image-hands">
-    <script src="./script.js"></script>
 </body>
+<script src="./script.js"></script>
 
 </html>

@@ -32,6 +32,7 @@ body {
 .box-imagem {
     width: 327px;
     height: 276px;
+    margin-top: 36px;
     border-radius: 20px;
     border: 1px solid #772FD3;
     display: flex;
@@ -129,28 +130,6 @@ body {
     transition: .6s ease;
 }
 
-#input-reset {
-    width: 150px;
-    height: 28px;
-    border-radius: 5px;
-    background: #02cf51;
-    margin-bottom: 5px;
-    color: #FFF;
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 10px;
-    border: none;
-    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.15);
-    cursor: pointer;
-    display: block;
-    margin: 0 auto 5px auto;
-}
-
-#input-reset:hover {
-    opacity: 0.7;
-    transition: .6s ease;
-}
-
 .paragraph-one {
     color: #777;
     font-size: 14px;
@@ -168,42 +147,10 @@ body {
     margin-top: 4px;
 }
 
-#coin-value {
-    display: inline-block;
-    color: #555;
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 18px;
-    margin-top: 4px;
-}
-
-#coin-value2 {
-    display: inline-block;
-    color: #555;
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 18px;
-    margin-top: 4px;
-}
-
 .logo-arrow {
     width: 25px;
     height: 39px;
     margin: 5px 43px;
-}
-
-#main-currency-image {
-    width: 52px;
-    height: 52px;
-    border: solid 1px #a1a1a1;
-    border-radius: 50%;
-}
-
-#second-currency-image {
-    width: 52px;
-    height: 52px;
-    border: solid 1px #a1a1a1;
-    border-radius: 50%;
 }
 
 @media screen and (max-width: 1050px) {
